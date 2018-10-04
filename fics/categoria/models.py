@@ -24,7 +24,7 @@ class TipoCategoria(models.Model):
 
 class Categoria(models.Model):
   nome_categoria = models.CharField(max_length=50)
-  imagem = models.ImageField(max_length=200)
+  imagem = models.ImageField(upload_to='.categoria_photos' ,max_length=200)
   tipo_categoria = models.ForeignKey(TipoCategoria, on_delete=models.CASCADE)
 
   def __str__(self):
