@@ -1,8 +1,10 @@
 *.log
 *.pot
 *.pyc
-*/__pycache__/
 local_settings.py
+staticfiles
+./.vscode
+node_modules
 
 .env
 db.sqlite3
