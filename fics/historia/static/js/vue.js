@@ -18,36 +18,45 @@ var app = new Vue({
     el: '#app',
     data () {
         return {
-            info: null,
+            info: [],
             autor: {
                 usuario:"",
                 nome:"",
                 descricao:"",
-                csrfmiddlewaretoken:""
+                idade:""
             }
         }
     },
     methods:{
         addUser: function () {
-            var crfsToken = getCookie('csrftoken')
-            this.autor.csrfmiddlewaretoken = crfsToken
             axios.post("http://localhost:8210/api/Autores/",this.autor)
             .then(
-                function(){
+                function(response){
                     console.log(response)
                 }
             )
             .catch(e => console.log(e))
+        },
+        deleteUser: function (id){
+            console.log(id)
+            axios.delete("http://localhost:8210/api/Autores/"+id)
+            .then(
+                function(response){
+                    console.log(response)
+                    app.refreshUser()
+                }
+            )
+        },
+        refreshUser: function(){
+            axios
+            .get("http://localhost:8210/api/Autores/")
+            .then(response => (this.info = response.data)).catch(e => console.log(e))
         }
     },
     mounted () {
        axios
        .get("http://localhost:8210/api/Autores/")
-       .then(
-           function(response){
-               this.info = response.data
-           }
-       )
+       .then(response => (this.info = response.data)).catch(e => console.log(e))
     }
 })
 

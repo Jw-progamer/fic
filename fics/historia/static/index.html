@@ -5,23 +5,6 @@
     </head>
     <body>
         <div id="app">
-            <ol v-for="campos in info" class="list-group">
-                <li class="list-group-item">
-                    {{campos.usuario}}
-                </li>
-                <li class="list-group-item">
-                    {{campos.nome}}
-                </li>
-                <li class="list-group-item">
-                    {{campos.idade}}
-                </li>
-                <li class="list-group-item">
-                    {{campos.data_inscricao}}
-                </li>
-                <li class="list-group-item">
-                    {{campos.descricao}}
-                </li>
-            </ol>
             <table class="table table-striped">
                 <thead>
                   <tr>
@@ -30,6 +13,7 @@
                     <th scope="col">Idade</th>
                     <th scope="col">Data de inscrição</th>
                     <th scope="col">Descrição</th>
+                    <th scope="col">Deletar</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -39,6 +23,9 @@
                     <td>{{campo.idade}}</td>
                     <td>{{campo.data_inscricao}}</td>
                     <td>{{campo.descricao}}</td>
+                    <td>
+                        <button v-on:click="deleteUser(campo.id)" class="btn btn-danger">Deletar</button>
+                    </td>
                   </tr>
                 </tbody>
               </table>
