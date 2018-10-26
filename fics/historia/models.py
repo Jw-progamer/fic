@@ -14,13 +14,13 @@ class Genero(models.Model):
 class Historia(models.Model):
 
     FAIXA_ETARIA = (
-        ('LIVRE', 0),
-        ('INFANT', 3),
-        ('CHILD',5),
-        ('YOUNG', 10),
-        ('TEEN', 13),
-        ('ADULT',16),
-        ('FORIBEN',18)
+        (0,'LIVRE'),
+        (3,'INFANT'),
+        (5,'CHILD'),
+        (10,'YOUNG'),
+        (13,'TEEN'),
+        (16,'ADULT'),
+        (18,'FORIBEN')
     )
 
     titulo = models.CharField(max_length=100)

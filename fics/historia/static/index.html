@@ -23,10 +23,18 @@
                     <td>
                         <input type="text" v-model:value="campo.usuario">
                     </td>
-                    <td>{{campo.nome}}</td>
-                    <td>{{campo.idade}}</td>
+                    <td>
+                        <input type="text" v-model:value="campo.nome">
+                    </td>
+                    <td>
+                        <input type="number" v-model:value="campo.idade">
+                    </td>
                     <td>{{campo.data_inscricao}}</td>
-                    <td>{{campo.descricao}}</td>
+                    <td>
+                        <textarea v-model="campo.descricao">
+                            {{campo.descricao}}
+                        </textarea>
+                    </td>
                     <td>
                         <button v-on:click="deleteUser(campo.id)" class="btn btn-danger">Deletar</button>
                         <button v-on:click="updateUser(campo)" class="btn btn-primary">Editar</button>
@@ -49,6 +57,7 @@
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="node_modules/axios/dist/axios.min.js"></script>
     <script src="js/vue.js"></script>
+    <script src="node_modules/vue-router/dist/vue-router.min.js"></script>
 </body>
 
 </html>
