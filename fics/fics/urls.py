@@ -26,7 +26,7 @@ router = routers.DefaultRouter()
 router.register(r'Autores',AutorViewSet)
 router.register(r'Capitulos',CapituloViewSet)
 router.register(r'Categorias',CategoriaVieSet)
-router.register(r'Historias',HistoriaViewSet)
+router.register(r'Historias',HistoriaViewSet, base_name='historia')
 
 urlpatterns = [
     url('admin/', admin.site.urls),

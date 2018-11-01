@@ -5,3 +5,4 @@ class HistoriaSerializer(serializers.ModelSerializer):
     class Meta:
         model = Historia
         fields = ('id','titulo','autor','descricao','restricao_etaria','data_publicacao','categorias','generos','completa')
+        depth = 1

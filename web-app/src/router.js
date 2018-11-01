@@ -3,15 +3,15 @@ import Router from 'vue-router'
 import Home from './views/Home.vue'
 import Insert from './views/Insert.vue'
 import Historia from './views/Historia.vue'
-
+import InsertCapitulo from './views/InsertCapitulo.vue'
 Vue.use(Router)
 
 export default new Router({
   routes: [{
-      path: '/',
-      name: 'home',
-      component: Home
-    },
+    path: '/',
+    name: 'home',
+    component: Home
+  },
     {
       path: '/insert',
       name: 'insert',
@@ -21,9 +21,19 @@ export default new Router({
       component: Insert
     },
     {
-      path: '/historia/:user',
-      name: 'historia',
-      component: Historia
+      path: '/:autor/historias',
+      name: 'historias',
+      component: Historia,
+      props: true,
+      children: [
+        {
+          path: ':historia',
+          name: 'inserir capitulo',
+          component: InsertCapitulo,
+          props: true
+        }
+      ]
     }
+
   ]
 })

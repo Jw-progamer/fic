@@ -1,7 +1,7 @@
 <template>
     <b-table striped :items="atr">
         <template slot="usuario" slot-scope='user'>
-            <b-link :to="'/historia/'+user.value">{{user.value}}</b-link>
+            <b-link :to="'/'+user.value+'/historias/'">{{user.value}}</b-link>
         </template>
     </b-table>
 </template>
