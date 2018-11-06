@@ -11,7 +11,7 @@
                         {{genero.nome}}
                     </li>
                 </ul>
-                <b-link router-tag="b-button" :to="historia">Novo capitulo</b-link>
+                <b-link router-tag="b-button" :to="'/historia/'+historia.id+'/add'">Novo capitulo</b-link>
                 <b-link router-tag="b-button" to="/capitulo">Visualizar Historia</b-link>
         </b-card>
     </div>

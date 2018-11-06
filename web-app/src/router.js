@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Home from './views/Home.vue'
 import Insert from './views/Insert.vue'
 import Historia from './views/Historia.vue'
+import HistoriaDetail from './views/HistoriaDetail.vue'
 import InsertCapitulo from './views/InsertCapitulo.vue'
 Vue.use(Router)
 
@@ -25,12 +26,17 @@ export default new Router({
       name: 'historias',
       component: Historia,
       props: true,
-      children: [
+    },
+    {
+      path:'/historia/:historia_id',
+      name:"historia",
+      component: HistoriaDetail,
+      props: true,
+      children:[
         {
-          path: ':historia',
-          name: 'inserir capitulo',
-          component: InsertCapitulo,
-          props: true
+          path:'add',
+          name:"add",
+          component: InsertCapitulo
         }
       ]
     }
