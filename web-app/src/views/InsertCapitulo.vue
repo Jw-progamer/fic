@@ -28,23 +28,24 @@ export default {
         indice: 0,
         titulo: "",
         texto: "",
-        historia:""
+        historia: ""
       }
     };
   },
-  methods:{
-    goToHome: function(){
-      this.$router.push('/')
+  methods: {
+    goToHome: function() {
+      this.$router.push("/");
     },
-    inseriCapitulo: function(env){      
-      this.capitulo.historia = this.historia.id                                     
-      axios.post('http://localhost:8211/api/Capitulos/',this.capitulo)
-      .then(response => {
-        this.goToHome()
-      })
-      .catch(function(response){
-        console.log(response)
-      })
+    inseriCapitulo: function(env) {
+      this.capitulo.historia = this.historia.id;
+      axios
+        .post("http://localhost:8211/api/Capitulos/", this.capitulo)
+        .then(response => {
+          this.goToHome();
+        })
+        .catch(function(response) {
+          console.log(response);
+        });
     }
   }
 };

@@ -12,7 +12,7 @@
                     </li>
                 </ul>
                 <b-link router-tag="b-button" :to="'/historia/'+historia.id+'/add'">Novo capitulo</b-link>
-                <b-link router-tag="b-button" to="/capitulo">Visualizar Historia</b-link>
+                <b-link router-tag="b-button" :to="'/historia/'+historia.id">Visualizar Historia</b-link>
         </b-card>
     </div>
     </div>
@@ -29,7 +29,7 @@ export default {
       historias: []
     };
   },
-  mounted() {
+  created() {
     axios
       .get("http://localhost:8211/api/Historias/getautor/" + this.autor)
       .then(response => (this.historias = response.data.historias))
