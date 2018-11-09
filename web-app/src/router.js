@@ -5,7 +5,8 @@ import Insert from './views/Insert.vue'
 import Historia from './views/Historia.vue'
 import HistoriaDetail from './views/HistoriaDetail.vue'
 import InsertCapitulo from './views/InsertCapitulo.vue'
-import VerHistoria from './views/VerHistoria.vue'
+import ViewHistoria from './views/ViewHistoria.vue'
+import ViewCapitulo from './views/ViewCapitulo.vue'
 Vue.use(Router)
 
 export default new Router({
@@ -41,9 +42,15 @@ export default new Router({
         {
           path: '',
           name: 'historia',
-          component: VerHistoria
+          component: ViewHistoria
         }
       ]
+    },
+    {
+      path:'/historia/:historia_id/:capitulo_id',
+      name: 'capitulo',
+      component: ViewCapitulo,
+      props: true
     }
 
   ]
